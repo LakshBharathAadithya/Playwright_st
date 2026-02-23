@@ -1,0 +1,29 @@
+export default class CommonConstants {
+    static readonly TS_FILE_EXTENSION = '.ts';
+    static readonly BACK_SLASH = '/';
+    static readonly SEMICOLON = ';';
+    static readonly BLANK = '';
+    static readonly ZERO = 0;
+    static readonly ONE = 1;
+    static readonly TWO = 2;
+    static readonly THREE = 3;
+    static readonly HALF = 0.5;
+    static readonly ONE_THOUSAND = 1000;
+    static readonly DOT = ".";
+    static readonly DOWNLOAD_PATH = "./test-results/downloads/";
+    static readonly SOAP_XML_REQUEST_PATH = "test/resources/API/SOAP/";
+    static readonly REST_JSON_REQUEST_PATH = "test/resources/API/REST/";
+    static readonly CLICK = "click";
+    static readonly YES = "yes";
+    static readonly SELECT = "Select";
+    static readonly HYPHEN = "-";
+    static readonly DATE_FORMAT = "DD/MM/YYYY";
+    static readonly FORWARD_SLASH_STRING = "/";
+    static readonly SIX = 6;
+    static readonly TEN = 10;
+    static readonly NUMBER_REGEX = "\\d+";
+    static readonly ENV = "env";
+    static readonly DATE_TIME_FORMAT = "DD MMM YYYY hh:mm:ss A";
+    static readonly STATISTICS_HTML_PATH = "./test-results/results/Statistics.html";
+    static readonly PASSED = 'passed';
+}
