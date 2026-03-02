@@ -4,6 +4,7 @@ import CommonConstants from '../constants/CommonConstants';
 import HtmlUtils from '../utils/HtmlUtils';
 import Logger from './Logger';
 
+    const SCENARIO_SEPARATOR = "******************************************************************************";
     const TEST_SEPARATOR = "##############################################################################";
     const STEP_SEPARATOR = "------------------------------------------------------------------------------";
 export default class TestListener implements Reporter {
@@ -21,6 +22,7 @@ export default class TestListener implements Reporter {
     }
 
     onTestBegin(test: TestCase, result: TestResult): void {
+
         this.printLogs(`Test: ${test.title} - Started`, TEST_SEPARATOR);
     }
 
@@ -73,4 +75,9 @@ export default class TestListener implements Reporter {
         Logger.info(`\t${msg.toUpperCase()}`);
         Logger.info(separator);
     }
+
+    // private printScenarioLogs(test: any, msg: string) {
+    //     const scenario = test.parent?.test[0].title;
+    //     this.printLogs(`${msg} SCENARIO: ${scenario}`, SCENARIO_SEPARATOR);
+    // }
 }
