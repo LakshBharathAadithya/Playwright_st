@@ -1,5 +1,5 @@
 import ElementActions from "./ElementActions";
-import { test, expect } from "@playwright/test";
+import { test, Locator } from "@playwright/test";
 
 export default class DropdownActions extends ElementActions {
 
@@ -8,8 +8,8 @@ export default class DropdownActions extends ElementActions {
         return this;
     }
 
-    public setLocator(selector: string, description: string) {
-        super.setLocator(selector, description);
+    public setLocator(locator: Locator, description: string) {
+        super.setLocator(locator, description);
         return this;
     }
 

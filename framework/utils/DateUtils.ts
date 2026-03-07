@@ -77,6 +77,13 @@ export default class DateUtil {
       return moment().format(CommonConstants.DATE_FORMAT);
    }
 
+   public static isDateInRange(date: string, startDate: string, endDate: string, dateFormat: string): boolean {
+      const targetDate = moment(date, dateFormat);
+      const start = moment(startDate, dateFormat);
+      const end = moment(endDate, dateFormat);
+      return targetDate.isBetween(start, end, undefined, '[]');
+   }
+
    /**
     * Get the duration between two date-time values
     * @param startDateTime start date-time
@@ -101,6 +108,76 @@ export default class DateUtil {
          milliseconds: duration.milliseconds()
       };
    }
-   
 
+   public static addSecondsToUnixTime(seconds: number): number {
+      return Date.now() + (seconds * 1000);
+   }
+
+   public static isDateBefore(date1: string, date2: string, dateFormat: string): boolean {
+      const d1 = moment(date1, dateFormat);
+      const d2 = moment(date2, dateFormat);
+      return d1.isBefore(d2);
+   }
+
+   public static isDateAfter(date1: string, date2: string, dateFormat: string): boolean {
+      const d1 = moment(date1, dateFormat);
+      const d2 = moment(date2, dateFormat);
+      return d1.isAfter(d2);
+   }
+
+   public static get currentYear() {
+      return moment().year();
+   }
+
+   public static get currentMonth() {
+      return moment().month() + 1; // month is zero-indexed
+   }
+
+   public static get currentDay() {
+      return moment().date();
+   }
+
+   public static get noOfDaysInCurrentMonth() {
+      return moment().daysInMonth();
+   }
+
+   public static getUnixTime(): number {
+      return Date.now();
+   }
+
+   public static getDayOfTheWeekAndMonth(date: string, dateFormat: string) {
+      const d = moment(date, dateFormat);
+      return {
+         dayShort: d.format('ddd'),
+         dayLong: d.format('dddd'),
+         monthShort: d.format('MMM'),
+         monthLong: d.format('MMMM'),
+      };
+   }
+
+   public static isLeapYear(date: string, dateFormat: string): boolean {
+      return moment(date, dateFormat).isLeapYear();
+   }
+
+   public static getTodayDateUTCOffset(utcOffSetValue: number, format: string): string {
+      return moment().utcOffset(utcOffSetValue).format(format);
+   }
+
+   public static wait(seconds: number) {
+      const endTime = seconds * 1000;
+      const startTime = new Date().getTime();
+      let elapsed = 0;
+      while(elapsed < endTime) {
+         elapsed = new Date().getTime() - startTime;
+      }
+   }
+
+   public static isWeekEnd(date: string, dateFormat: string) {
+      const dayOfWeek = moment(date, dateFormat).day();
+      return dayOfWeek === 0 || dayOfWeek === 6; // Sunday = 0, Saturday = 6
+   }
+
+   public static isDateTimeValid(dateTime: string, dateTimeFormat: string): boolean {
+      return moment(dateTime, dateTimeFormat, true).isValid();
+   }
 }

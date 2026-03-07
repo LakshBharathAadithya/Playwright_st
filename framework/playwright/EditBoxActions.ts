@@ -1,5 +1,5 @@
 import ElementActions from "./ElementActions";
-import test, { expect } from "@playwright/test";
+import test, { expect, Locator } from "@playwright/test";
 
 export default class EditBoxActions extends ElementActions {
 
@@ -8,8 +8,8 @@ export default class EditBoxActions extends ElementActions {
         return this;
     }
 
-    public setLocator(selector: string, description: string) {
-        super.setLocator(selector, description);
+    public setLocator(locator: Locator, description: string) {
+        super.setLocator(locator, description);
         return this;
     }
 

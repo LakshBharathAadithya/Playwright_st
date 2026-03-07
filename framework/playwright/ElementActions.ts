@@ -1,4 +1,3 @@
-import { text } from "node:stream/consumers";
 import { expect, Locator, Page, test} from "playwright/test";
 
 export default class ElementActions{
@@ -8,8 +7,8 @@ export default class ElementActions{
 
     constructor(private page: Page){ }
 
-    public setLocator(selector: string, description: string): ElementActions {
-        this.selector = selector;
+    public setLocator(locator: Locator, description: string): ElementActions {
+        this.locator = locator;
         this.description = description;
         return this;
     }
