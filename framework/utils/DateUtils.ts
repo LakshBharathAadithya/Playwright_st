@@ -73,8 +73,8 @@ export default class DateUtil {
     * Get the Today's Date in format DD/MM/YYYY
     * @returns - return the Today's Date
     */
-   public static getTodayDate() {
-      return moment().format(CommonConstants.DATE_FORMAT);
+   public static getTodayDate(dateFormat: string): string {
+      return moment().format(dateFormat);
    }
 
    public static isDateInRange(date: string, startDate: string, endDate: string, dateFormat: string): boolean {

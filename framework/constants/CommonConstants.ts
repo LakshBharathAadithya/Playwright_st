@@ -13,6 +13,7 @@ export default class CommonConstants {
     static readonly DOWNLOAD_PATH = "./test-results/downloads/";
     static readonly SOAP_XML_REQUEST_PATH = "test/resources/API/SOAP/";
     static readonly REST_JSON_REQUEST_PATH = "test/resources/API/REST/";
+    static readonly REST_JSON_SCHEMA_PATH = "test/resources/API/REST/Schema/";
     static readonly CLICK = "click";
     static readonly YES = "yes";
     static readonly SELECT = "Select";

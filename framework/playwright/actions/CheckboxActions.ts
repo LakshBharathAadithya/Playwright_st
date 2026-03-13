@@ -1,4 +1,4 @@
-import StringUtils from "../utils/StringUtils";
+import StringUtils from "../../utils/StringUtils";
 import ElementActions from "./ElementActions";
 import { test, expect, Locator } from "@playwright/test";
 
